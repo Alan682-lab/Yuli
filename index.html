@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Yuli ♡</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #403642;
+    background: linear-gradient(135deg, #fff7fb, #f5f0ff, #eef8ff);
+    overflow-x: hidden;
+}
+
+.fondo {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.estrella {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: flotar 6s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-20px);
+        opacity: 0.9;
+    }
+}
+
+.tarjeta {
+    width: min(90%, 650px);
+    padding: 45px 35px;
+    background: rgba(255,255,255,0.82);
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(80,60,90,0.15);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #756a76;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    color: white;
+    background: #5d4a62;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(60,40,70,0.2);
+}
+
+.carta {
+    display: none;
+    text-align: left;
+    animation: aparecer 0.8s ease;
+}
+
+.carta h2 {
+    text-align: center;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.carta p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.final {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.corazon {
+    font-size: 1.3rem;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .tarjeta {
+        padding: 32px 22px;
+    }
+
+    .carta p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="fondo">
+    <span class="estrella" style="left:10%; top:20%; animation-delay:0s;"></span>
+    <span class="estrella" style="left:25%; top:70%; animation-delay:1s;"></span>
+    <span class="estrella" style="left:45%; top:15%; animation-delay:2s;"></span>
+    <span class="estrella" style="left:65%; top:80%; animation-delay:3s;"></span>
+    <span class="estrella" style="left:82%; top:25%; animation-delay:1.5s;"></span>
+    <span class="estrella" style="left:90%; top:65%; animation-delay:4s;"></span>
+</div>
+
+<div class="tarjeta" id="inicio">
+
+    <h1>Para ti, Yuli ♡</h1>
+
+    <div class="subtitulo">
+        Hay algo que quería decirte<br>
+        desde hace un tiempo...
+    </div>
+
+    <button onclick="abrirCarta()">
+        Hay algo que quiero decirte
+    </button>
+
+</div>
+
+
+<div class="tarjeta carta" id="carta">
+
+    <h2>Yuli ♡</h2>
+
+    <p>
+        Haiii, ¿cómo estás? ¿Cómo te ha ido?
+    </p>
+
+    <p>
+        Mira, la verdad no me gustaría seguir ocultando varias cosas
+        que he venido sintiendo desde hace bastante tiempo.
+        Y pues la verdad, a pesar de lo que me digas, no quiero perder
+        tu amistad. No me gustaría que después fuera raro vernos o
+        hablar en los cumpleaños de Dana, sabes?
+    </p>
+
+    <p>
+        Quiero seguir siendo tu amigo y seguir hablándote, porque no
+        me gustaría dejar de hacerlo. Sé cómo eres y tampoco quiero
+        hacerte sentir rara con esto, pero la verdad es que...
+        <strong>me gustas desde hace tiempo.</strong>
+    </p>
+
+    <p>
+        Y a pesar de todo lo que te estoy diciendo, no quiero perderte.
+        Te quiero mucho y siento que quizá los dos sabemos muchas cosas
+        del otro y nos conocemos bastante.
+    </p>
+
+    <p>
+        Me gustaría poder estar contigo, apoyarte en los días complicados
+        y compartir más cosas contigo.
+    </p>
+
+    <p>
+        Me gustas mucho y pues... ya solo quería decírtelo.
+        Sea lo que sea que me digas, no quiero perderte. :)
+    </p>
+
+    <p class="final">
+        Gracias por leerme. <span class="corazon">♡</span>
+    </p>
+
+</div>
+
+
+<script>
+
+function abrirCarta() {
+
+    document.getElementById("inicio").style.display = "none";
+
+    document.getElementById("carta").style.display = "block";
+
+}
+
+</script>
+
+</body>
+</html>
